@@ -7,5 +7,6 @@ target 'Test' do
 
   # Pods for Test
 pod 'SwiftyJSON', '~> 4.0'
+pod 'SnapKit', '~> 4.0.0'
 
 end

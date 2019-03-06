@@ -15,6 +15,9 @@
 		5BCC47EF222FA26500F5E3FE /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47EE222FA26500F5E3FE /* WebService.swift */; };
 		5BCC47F1222FA30A00F5E3FE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47F0222FA30A00F5E3FE /* Reachability.swift */; };
 		5BCC47F4222FA51500F5E3FE /* DetailedDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47F3222FA51500F5E3FE /* DetailedDescription.swift */; };
+		5BCC47F7222FF1E000F5E3FE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47F6222FF1E000F5E3FE /* ProgressHUD.swift */; };
+		5BCC47F9222FF24F00F5E3FE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47F8222FF24F00F5E3FE /* UIImage.swift */; };
+		5BCC47FC223002AB00F5E3FE /* DetailedDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47FB223002AB00F5E3FE /* DetailedDescriptionTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		5BCC47EE222FA26500F5E3FE /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		5BCC47F0222FA30A00F5E3FE /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		5BCC47F3222FA51500F5E3FE /* DetailedDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedDescription.swift; sourceTree = "<group>"; };
+		5BCC47F6222FF1E000F5E3FE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		5BCC47F8222FF24F00F5E3FE /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		5BCC47FB223002AB00F5E3FE /* DetailedDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		F36A5D578118D6A69BC6A637 /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +71,8 @@
 		04154592222EDB5200A00335 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				5BCC47FA2230028100F5E3FE /* Cells */,
+				5BCC47F5222FF1D800F5E3FE /* Extension */,
 				5BCC47F2222FA40E00F5E3FE /* Model */,
 				5BCC47ED222FA24F00F5E3FE /* WebServices */,
 				04154593222EDB5200A00335 /* AppDelegate.swift */,
@@ -91,6 +99,23 @@
 				5BCC47F3222FA51500F5E3FE /* DetailedDescription.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5BCC47F5222FF1D800F5E3FE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5BCC47F6222FF1E000F5E3FE /* ProgressHUD.swift */,
+				5BCC47F8222FF24F00F5E3FE /* UIImage.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5BCC47FA2230028100F5E3FE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5BCC47FB223002AB00F5E3FE /* DetailedDescriptionTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		DEECD6D4774A5996688D4DE6 /* Frameworks */ = {
@@ -209,12 +234,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Test/Pods-Test-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,9 +258,12 @@
 			files = (
 				5BCC47EF222FA26500F5E3FE /* WebService.swift in Sources */,
 				04154596222EDB5200A00335 /* ViewController.swift in Sources */,
+				5BCC47F7222FF1E000F5E3FE /* ProgressHUD.swift in Sources */,
 				5BCC47F1222FA30A00F5E3FE /* Reachability.swift in Sources */,
+				5BCC47FC223002AB00F5E3FE /* DetailedDescriptionTableViewCell.swift in Sources */,
 				5BCC47F4222FA51500F5E3FE /* DetailedDescription.swift in Sources */,
 				04154594222EDB5200A00335 /* AppDelegate.swift in Sources */,
+				5BCC47F9222FF24F00F5E3FE /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

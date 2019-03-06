@@ -27,7 +27,6 @@ class Webservice {
             }
             
             guard let responseData = data else {
-                //UIViewController.removeHUD(hud)
                 completion(nil, nil, nil)
                 return
             }
@@ -44,7 +43,10 @@ class Webservice {
                 
                 for item in json["rows"].arrayValue {
                     let detailedDescriptionData = DetailedDescription.init(title: item["title"].stringValue, description: item["description"].stringValue, mediaPath: item["imageHref"].stringValue)
-                    arrDetailedDescription.append(detailedDescriptionData)
+                    
+                    if detailedDescriptionData.title != "" || detailedDescriptionData.description != "" || detailedDescriptionData.mediaPath != "" {
+                        arrDetailedDescription.append(detailedDescriptionData)
+                    }
                 }
                 
                 completion(arrDetailedDescription, json["title"].stringValue, nil)
