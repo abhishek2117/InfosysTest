@@ -34,6 +34,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             make.right.equalTo(view)
         }
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .refresh,
+            target: self,
+            action: #selector(fetchDataFromServer)
+        )
+        
+        fetchDataFromServer()
+    }
+    
+    @objc func fetchDataFromServer() {
         //Internet check
         if Reachability.isConnectedToNetwork() {
             let hud = UIViewController.displayHUD(self.view)
@@ -61,7 +71,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
         }
-        
     }
     
     // MARK :- UITableView Delegate & DataSource

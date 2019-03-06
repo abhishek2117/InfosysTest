@@ -17,7 +17,7 @@ class DetailedDescriptionTableViewCell: UITableViewCell {
         img.contentMode = .scaleAspectFill // image will never be strecthed vertially or horizontally
         img.translatesAutoresizingMaskIntoConstraints = false // enable autolayout
         img.layer.cornerRadius = 25
-        img.image = UIImage(named: "placeholder")
+        img.image = UIImage(named: "placeholder") // add default image
         img.clipsToBounds = true
         return img
     }()
