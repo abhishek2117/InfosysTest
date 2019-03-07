@@ -64,5 +64,12 @@ class TestTests: XCTestCase {
             }.resume()
     }
 
+    func testIsInternetConnected() {
+        if Reachability.isConnectedToNetwork() {
+            XCTAssert(true)
+        } else {
+            XCTAssert(false)
+        }
+    }
 
 }
