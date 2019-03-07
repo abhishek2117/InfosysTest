@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class CountryDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CountryDetailsViewController: UIViewController {
 
     private var arrayCountryDetials: [CountryDetails] = []
     
@@ -73,7 +73,9 @@ class CountryDetailsViewController: UIViewController, UITableViewDelegate, UITab
         }
     }
     
-    // MARK :- UITableView Delegate & DataSource
+}
+
+extension CountryDetailsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
@@ -82,6 +84,10 @@ class CountryDetailsViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+}
+
+extension CountryDetailsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayCountryDetials.count
