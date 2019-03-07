@@ -98,6 +98,7 @@
 		04154592222EDB5200A00335 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				5BEB9C1522310F7300E2BC8B /* Controller */,
 				5BEB9C0F2230F56000E2BC8B /* Custom Classes */,
 				041545B32230DD3100A00335 /* Constant */,
 				5BCC47FA2230028100F5E3FE /* Cells */,
@@ -105,7 +106,6 @@
 				5BCC47F2222FA40E00F5E3FE /* Model */,
 				5BCC47ED222FA24F00F5E3FE /* WebServices */,
 				04154593222EDB5200A00335 /* AppDelegate.swift */,
-				04154595222EDB5200A00335 /* CountryDetailsViewController.swift */,
 				0415459A222EDB5400A00335 /* Assets.xcassets */,
 				0415459C222EDB5400A00335 /* LaunchScreen.storyboard */,
 				0415459F222EDB5400A00335 /* Info.plist */,
@@ -170,6 +170,14 @@
 				5BEB9C102230F58400E2BC8B /* ImageCache.swift */,
 			);
 			path = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		5BEB9C1522310F7300E2BC8B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04154595222EDB5200A00335 /* CountryDetailsViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		DEECD6D4774A5996688D4DE6 /* Frameworks */ = {
