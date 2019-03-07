@@ -18,8 +18,9 @@
 		5BCC47F1222FA30A00F5E3FE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47F0222FA30A00F5E3FE /* Reachability.swift */; };
 		5BCC47F4222FA51500F5E3FE /* CountryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47F3222FA51500F5E3FE /* CountryDetails.swift */; };
 		5BCC47F7222FF1E000F5E3FE /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47F6222FF1E000F5E3FE /* ProgressHUD.swift */; };
-		5BCC47F9222FF24F00F5E3FE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47F8222FF24F00F5E3FE /* UIImage.swift */; };
-		5BCC47FC223002AB00F5E3FE /* DetailedDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47FB223002AB00F5E3FE /* DetailedDescriptionTableViewCell.swift */; };
+		5BCC47F9222FF24F00F5E3FE /* ITUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47F8222FF24F00F5E3FE /* ITUIImageView.swift */; };
+		5BCC47FC223002AB00F5E3FE /* CountryDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47FB223002AB00F5E3FE /* CountryDetailsTableViewCell.swift */; };
+		5BEB9C112230F58400E2BC8B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEB9C102230F58400E2BC8B /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +50,9 @@
 		5BCC47F0222FA30A00F5E3FE /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		5BCC47F3222FA51500F5E3FE /* CountryDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetails.swift; sourceTree = "<group>"; };
 		5BCC47F6222FF1E000F5E3FE /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
-		5BCC47F8222FF24F00F5E3FE /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		5BCC47FB223002AB00F5E3FE /* DetailedDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		5BCC47F8222FF24F00F5E3FE /* ITUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITUIImageView.swift; sourceTree = "<group>"; };
+		5BCC47FB223002AB00F5E3FE /* CountryDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		5BEB9C102230F58400E2BC8B /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		F36A5D578118D6A69BC6A637 /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +98,7 @@
 		04154592222EDB5200A00335 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				5BEB9C0F2230F56000E2BC8B /* Custom Classes */,
 				041545B32230DD3100A00335 /* Constant */,
 				5BCC47FA2230028100F5E3FE /* Cells */,
 				5BCC47F5222FF1D800F5E3FE /* Extension */,
@@ -148,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				5BCC47F6222FF1E000F5E3FE /* ProgressHUD.swift */,
-				5BCC47F8222FF24F00F5E3FE /* UIImage.swift */,
+				5BCC47F8222FF24F00F5E3FE /* ITUIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -156,9 +159,17 @@
 		5BCC47FA2230028100F5E3FE /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				5BCC47FB223002AB00F5E3FE /* DetailedDescriptionTableViewCell.swift */,
+				5BCC47FB223002AB00F5E3FE /* CountryDetailsTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		5BEB9C0F2230F56000E2BC8B /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5BEB9C102230F58400E2BC8B /* ImageCache.swift */,
+			);
+			path = "Custom Classes";
 			sourceTree = "<group>";
 		};
 		DEECD6D4774A5996688D4DE6 /* Frameworks */ = {
@@ -329,15 +340,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BEB9C112230F58400E2BC8B /* ImageCache.swift in Sources */,
 				5BCC47EF222FA26500F5E3FE /* WebService.swift in Sources */,
 				04154596222EDB5200A00335 /* CountryDetailsViewController.swift in Sources */,
 				041545B52230DD3B00A00335 /* Constant.swift in Sources */,
 				5BCC47F7222FF1E000F5E3FE /* ProgressHUD.swift in Sources */,
 				5BCC47F1222FA30A00F5E3FE /* Reachability.swift in Sources */,
-				5BCC47FC223002AB00F5E3FE /* DetailedDescriptionTableViewCell.swift in Sources */,
+				5BCC47FC223002AB00F5E3FE /* CountryDetailsTableViewCell.swift in Sources */,
 				5BCC47F4222FA51500F5E3FE /* CountryDetails.swift in Sources */,
 				04154594222EDB5200A00335 /* AppDelegate.swift in Sources */,
-				5BCC47F9222FF24F00F5E3FE /* UIImage.swift in Sources */,
+				5BCC47F9222FF24F00F5E3FE /* ITUIImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

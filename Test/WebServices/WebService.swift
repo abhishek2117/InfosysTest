@@ -9,20 +9,20 @@
 import Foundation
 import SwiftyJSON
 
-class Webservice {
+class WebService {
     
-    private let sourceURL = URL(string: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json")!
+    private let sourceURL = URL(string: Constant.urlCountryDetail)!
     
-    static let sharedInstance = Webservice()
+    static let sharedInstance = WebService()
     
-    func loadData(completion :@escaping ([DetailedDescription]?, String?, String?) -> ()) {
+    func loadData(completion: @escaping ([CountryDetails]?, String?, String?) -> ()) {
         
-        var arrDetailedDescription: [DetailedDescription] = []
+        var arrDetailedDescription: [CountryDetails] = []
         
         URLSession.shared.dataTask(with: sourceURL) { (data, response, error) in
             
             if error != nil {
-                print(error!.localizedDescription)
+                debugPrint(error!.localizedDescription)
                 completion(nil, nil, error!.localizedDescription)
             }
             
@@ -42,14 +42,14 @@ class Webservice {
                 let json = JSON(responseJSONDict)
                 
                 for item in json["rows"].arrayValue {
-                    let detailedDescriptionData = DetailedDescription.init(title: item["title"].stringValue, description: item["description"].stringValue, mediaPath: item["imageHref"].stringValue)
+                    let detailedDescriptionData = CountryDetails.init(title: item[CountryDetailsJsonConstant.title].stringValue, description: item[CountryDetailsJsonConstant.description].stringValue, mediaPath: item[CountryDetailsJsonConstant.imageHref].stringValue)
                     
                     if detailedDescriptionData.title != "" || detailedDescriptionData.description != "" || detailedDescriptionData.mediaPath != "" {
                         arrDetailedDescription.append(detailedDescriptionData)
                     }
                 }
                 
-                completion(arrDetailedDescription, json["title"].stringValue, nil)
+                completion(arrDetailedDescription, json[CountryDetailsJsonConstant.title].stringValue, nil)
             } catch {
                 completion(nil, nil, error.localizedDescription)
             }

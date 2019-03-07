@@ -10,9 +10,9 @@ import UIKit
 import SnapKit
 import Foundation
 
-class DetailedDescriptionTableViewCell: UITableViewCell {
+class CountryDetailsTableViewCell: UITableViewCell {
     
-    let imgMedia:UIImageView = {
+    let imgMedia: UIImageView = {
         let img = UIImageView()
         img.contentMode = .scaleAspectFill // image will never be strecthed vertially or horizontally
         img.translatesAutoresizingMaskIntoConstraints = false // enable autolayout
@@ -22,7 +22,7 @@ class DetailedDescriptionTableViewCell: UITableViewCell {
         return img
     }()
     
-    let lblTitle:UILabel = {
+    let lblTitle: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 15.0)
@@ -30,8 +30,7 @@ class DetailedDescriptionTableViewCell: UITableViewCell {
         return label
     }()
     
-    
-    let lblDesc:UILabel = {
+    let lblDesc: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 12.0)
@@ -75,16 +74,16 @@ class DetailedDescriptionTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var detailedDescription: DetailedDescription? {
+    var countryDetail: CountryDetails? {
         didSet {
             
-            guard let detailedDescriptionItem = detailedDescription else {
+            guard let countryDetailItem = countryDetail else {
                 return
             }
             
-            lblTitle.text = detailedDescriptionItem.title
-            lblDesc.text = detailedDescriptionItem.description
-            imgMedia.loadImage(urlString: detailedDescriptionItem.mediaPath)
+            lblTitle.text = countryDetailItem.title
+            lblDesc.text = countryDetailItem.description
+            imgMedia.loadImage(fromUrl: countryDetailItem.mediaPath)
         }
     }
 }

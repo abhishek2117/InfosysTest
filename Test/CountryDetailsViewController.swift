@@ -9,11 +9,11 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CountryDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    private var arrData: [DetailedDescription] = []
-    private var tblData: UITableView!
-    private let cellId = "cellId"
+    private var arrayCountryDetials: [CountryDetails] = []
+    
+    var tblData: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tblData.dataSource = self
         tblData.tableFooterView = UIView()
         tblData.separatorInset = .zero
-        tblData.register(DetailedDescriptionTableViewCell.self, forCellReuseIdentifier: self.cellId)
+        tblData.register(CountryDetailsTableViewCell.self, forCellReuseIdentifier: Constant.countryCellIdentifier)
         self.view.addSubview(tblData)
         
         tblData.snp.makeConstraints { (make) in
@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Internet check
         if Reachability.isConnectedToNetwork() {
             let hud = UIViewController.displayHUD(self.view)
-            Webservice.sharedInstance.loadData { (arrDetailedDescription, title, error) in
+            WebService.sharedInstance.loadData { (arrDetailedDescription, title, error) in
                 
                 //Get back to the main queue
                 DispatchQueue.main.async {
@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     }
                     
                     if let arrDetailedDescriptionTemp = arrDetailedDescription {
-                        self.arrData = arrDetailedDescriptionTemp
+                        self.arrayCountryDetials = arrDetailedDescriptionTemp
                         self.tblData.reloadData()
                     }
                     
@@ -84,12 +84,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrData.count
+        return arrayCountryDetials.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! DetailedDescriptionTableViewCell
-        cell.detailedDescription = arrData[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.countryCellIdentifier, for: indexPath) as! CountryDetailsTableViewCell
+        cell.countryDetail = arrayCountryDetials[indexPath.row]
         return cell
     }
     
