@@ -83,13 +83,21 @@ extension UIImageView {
                     return
                 }
                 
-                if let image = UIImage(data: responseData) {
-                    ImageCache.shared.save(image: image, forKey: (response?.url?.absoluteString)!)
-                    DispatchQueue.main.async {
-                        self.image = image
+                if let httpResponse = response as? HTTPURLResponse {
+                    
+                    // Ensure we got back a status code of 200 - Success
+                    guard httpResponse.statusCode == 200 else { return }
+                    if let image = UIImage(data: responseData) {
+                        if let response = response {
+                            if let url = response.url {
+                                ImageCache.shared.save(image: image, forKey: url.absoluteString)
+                                DispatchQueue.main.async {
+                                    self.image = image
+                                }
+                            }
+                        }
                     }
                 }
-                
             }
             task.resume()
         }

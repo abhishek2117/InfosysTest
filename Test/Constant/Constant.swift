@@ -10,11 +10,16 @@ import Foundation
 
 class Constant {
     
-    static let countryCellIdentifier = "countryCellIdentifier"
-    
     static let urlCountryDetail = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
- 
+    
     static let webServiceTimeOut: TimeInterval = 30
+    
+    static let noInternetConnectionAlertTitle = "No Internet Connection"
+    
+    static let internetConnectionAlertMessage = "Make sure your device is connected to the internet."
+    
+    static let internetConnectionAlertOkButtonTitle = "Ok"
+    
 }
 
 class CountryDetailsJsonConstant {
@@ -24,5 +29,13 @@ class CountryDetailsJsonConstant {
     static let description = "description"
     
     static let imageHref = "imageHref"
+    
+}
+
+class CountryDetailsTableViewConstant {
+    
+    static let countryCellIdentifier = "countryCellIdentifier"
+    
+    static let countryDetailsTableViewCellPlaceholder = "placeholder"
     
 }

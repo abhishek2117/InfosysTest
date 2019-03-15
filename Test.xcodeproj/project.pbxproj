@@ -13,6 +13,7 @@
 		0415459E222EDB5400A00335 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0415459C222EDB5400A00335 /* LaunchScreen.storyboard */; };
 		041545AC22302DB900A00335 /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041545AB22302DB900A00335 /* TestTests.swift */; };
 		041545B52230DD3B00A00335 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041545B42230DD3B00A00335 /* Constant.swift */; };
+		041C62B9223B520500D9149E /* PodsInstallationReadme.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 041C62B8223B520500D9149E /* PodsInstallationReadme.rtf */; };
 		2DE0E6A246FCCDC39698B72E /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D71147D278AE45563D6104 /* Pods_Test.framework */; };
 		5BCC47EF222FA26500F5E3FE /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47EE222FA26500F5E3FE /* WebService.swift */; };
 		5BCC47F1222FA30A00F5E3FE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC47F0222FA30A00F5E3FE /* Reachability.swift */; };
@@ -44,6 +45,7 @@
 		041545AB22302DB900A00335 /* TestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTests.swift; sourceTree = "<group>"; };
 		041545AD22302DB900A00335 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		041545B42230DD3B00A00335 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		041C62B8223B520500D9149E /* PodsInstallationReadme.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = PodsInstallationReadme.rtf; sourceTree = "<group>"; };
 		132496DDB9BB1144BC7DEEE5 /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		43D71147D278AE45563D6104 /* Pods_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCC47EE222FA26500F5E3FE /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		04154592222EDB5200A00335 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				041C62B7223B51DD00D9149E /* Resources */,
 				5BEB9C1522310F7300E2BC8B /* Controller */,
 				5BEB9C0F2230F56000E2BC8B /* Custom Classes */,
 				041545B32230DD3100A00335 /* Constant */,
@@ -128,6 +131,14 @@
 				041545B42230DD3B00A00335 /* Constant.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		041C62B7223B51DD00D9149E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				041C62B8223B520500D9149E /* PodsInstallationReadme.rtf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		5BCC47ED222FA24F00F5E3FE /* WebServices */ = {
@@ -281,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0415459E222EDB5400A00335 /* LaunchScreen.storyboard in Resources */,
+				041C62B9223B520500D9149E /* PodsInstallationReadme.rtf in Resources */,
 				0415459B222EDB5400A00335 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

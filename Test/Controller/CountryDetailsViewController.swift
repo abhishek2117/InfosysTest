@@ -10,10 +10,12 @@ import UIKit
 import SnapKit
 
 class CountryDetailsViewController: UIViewController {
-
+    
     private var arrayCountryDetials: [CountryDetails] = []
     
     var tblData: UITableView!
+    
+    static let tblEstimateHeight: CGFloat = 70.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,7 @@ class CountryDetailsViewController: UIViewController {
         tblData.dataSource = self
         tblData.tableFooterView = UIView()
         tblData.separatorInset = .zero
-        tblData.register(CountryDetailsTableViewCell.self, forCellReuseIdentifier: Constant.countryCellIdentifier)
+        tblData.register(CountryDetailsTableViewCell.self, forCellReuseIdentifier: CountryDetailsTableViewConstant.countryCellIdentifier)
         self.view.addSubview(tblData)
         
         tblData.snp.makeConstraints { (make) in
@@ -64,8 +66,8 @@ class CountryDetailsViewController: UIViewController {
                 }
             }
         } else {
-            let alert = UIAlertController.init(title: "No Internet Connection", message: "Make sure your device is connected to the internet.", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction) in
+            let alert = UIAlertController.init(title: Constant.noInternetConnectionAlertTitle, message: Constant.internetConnectionAlertMessage, preferredStyle: .alert)
+            let ok = UIAlertAction(title: Constant.internetConnectionAlertOkButtonTitle, style: .default) { (action:UIAlertAction) in
                 
             }
             alert.addAction(ok)
@@ -78,7 +80,7 @@ class CountryDetailsViewController: UIViewController {
 extension CountryDetailsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return CountryDetailsViewController.tblEstimateHeight
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -94,7 +96,8 @@ extension CountryDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.countryCellIdentifier, for: indexPath) as! CountryDetailsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CountryDetailsTableViewConstant.countryCellIdentifier, for: indexPath) as! CountryDetailsTableViewCell
+        cell.imgMedia.image = UIImage(named: CountryDetailsTableViewConstant.countryDetailsTableViewCellPlaceholder)
         cell.countryDetail = arrayCountryDetials[indexPath.row]
         return cell
     }
